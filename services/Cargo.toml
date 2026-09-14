@@ -2,6 +2,10 @@
 name = "services"
 version = "0.1.0"
 edition = "2024"
+# Adding the `engine` binary made a bare `cargo run` ambiguous, which breaks the
+# CLI examples in README.md. Keep `cargo run` meaning the feed; the engine is
+# reached with `cargo run --bin engine`.
+default-run = "services"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
@@ -13,3 +17,4 @@ axum = "0.8.4"
 rand = "0.8"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+ratatui = "0.30.2"
