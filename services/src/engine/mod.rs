@@ -7,6 +7,8 @@
 //! The fold is pure — no network, no clock — so the whole engine is testable
 //! against a canned sequence of events with no server running.
 
+pub mod book;
 pub mod types;
 
+pub use book::OrderBook;
 pub use types::{ConvertError, Event, Order, Price, Qty, Symbol, Trade, resolve_symbol};
